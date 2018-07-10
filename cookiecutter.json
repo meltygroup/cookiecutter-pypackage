@@ -1,0 +1,18 @@
+{
+	"author_name": "TamTam",
+	"author_email": "tamtam@meltygroup.com",
+	"project_name": "Awesome Melty Project",
+	"project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+	"project_version": "1.0.0",
+	"project_short_description": "My awesome project description o/",
+	"project_type": [
+		"package",
+		"module"
+	],
+	"python_version": "3.6",
+	"python_path": "/usr/bin/python{{ cookiecutter.python_version }}",
+	"has_docs": [
+		"n",
+		"y"
+	]
+}
