@@ -9,8 +9,7 @@ You need `cookiecutter` to process this template:
 ```bash
 python<version> -m pip install cookiecutter
 ```
-
-
+{% if cookiecutter.project_type == "package" %}
 ## Running
 
 To create a project using this template, simply run `cookiecutter`:
@@ -21,3 +20,4 @@ cookiecutter <path_to_the_template>
 ```
 
 You'll have to fill some questions and the magic happens!
+{% endif %}
