@@ -10,7 +10,6 @@
 		"module"
 	],
 	"python_version": "3.6",
-	"python_path": "/usr/bin/python{{ cookiecutter.python_version }}",
 	"has_docs": [
 		"n",
 		"y"
