@@ -1,3 +1,5 @@
+image: python:{{ cookiecutter.python_version }}
+
 stages:
   - lint
   - deploy
