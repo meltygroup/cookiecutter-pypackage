@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 import logging
 import sys
 
-import {{ cookiecutter.project_slug }}.logger
+import logger
 
 
 def main(program_args=None):

@@ -7,6 +7,7 @@
 from unittest.mock import patch
 import logging
 import sys
+
 import {{ cookiecutter.project_slug }}
 
 

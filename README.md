@@ -1,4 +1,4 @@
-# cookiecutter-meltypy
+# cookiecutter-simple-ptoject
 
 A cookiecutter template to generate Melty's Python projects.
 
