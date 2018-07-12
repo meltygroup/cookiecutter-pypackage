@@ -23,6 +23,18 @@ setup(
     version='{{ cookiecutter.project_version }}',
     license='Proprietary',
     zip_safe=False,
+    extras_require={
+        'test': [
+            'pytest==3.6.3',
+            'pytest-cov==2.5.1',
+            'flake8==3.5.0',
+            'pylint==1.8.2',
+            'black==18.6b4',
+            'bandit==1.4.0',
+            'mypy==0.610',
+            'detox==0.12'
+        ]
+    },
     {% if cookiecutter.project_type == "package" %}
     entry_points= {
         'console_scripts': [
