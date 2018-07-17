@@ -8,7 +8,7 @@ from unittest.mock import patch
 import logging
 import sys
 
-import {{ cookiecutter.project_slug }}
+import {{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }} as app
 
 
 def test_package(capfd):
@@ -17,7 +17,7 @@ def test_package(capfd):
     """
     logging.raiseExceptions = False
     with patch.object(sys, "argv", ['{{ cookiecutter.project_slug }}.py']):
-        {{ cookiecutter.project_slug }}.main()
+        app.main()
     out, err = capfd.readouterr()
     assert "{{ cookiecutter.project_slug }} version {{ cookiecutter.project_version }}" in out
     assert err == ""
@@ -28,7 +28,7 @@ def test_package_with_verbose(capfd):
         Test the output of the program with verbose mode.
     """
     logging.raiseExceptions = False
-    {{ cookiecutter.project_slug }}.main(["-v"])
+    app.main(["-v"])
     out, err = capfd.readouterr()
     assert "Hello world, verbose mode." in out
     assert err == ""
