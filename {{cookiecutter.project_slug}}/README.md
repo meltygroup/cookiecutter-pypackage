@@ -2,9 +2,11 @@
 
 {{ cookiecutter.project_short_description }}
 
+
 ## Prerequisites
 
 This project use `python{{ cookiecutter.python_version }}` to work and `detox` to be linted.
+
 
 ## Building
 
@@ -17,6 +19,7 @@ By running `detox` you will:
 ```bash
 $ detox
 ```
+
 {% if cookiecutter.project_type == "package" %}
 ## Running
 
