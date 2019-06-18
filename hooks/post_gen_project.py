@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
-
 import os
-import shutil
+
+if "{{ cookiecutter.type }}" == "application":
+    os.remove("setup.py")
