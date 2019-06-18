@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-
+"""Tests for the `/{{ cookiecutter.project_slug }}.py` module.
 """
-    Tests for the `/{{ cookiecutter.project_slug }}.py` module.
-"""
-{% if cookiecutter.project_type == "package" %}
 from unittest.mock import patch
 import logging
 import sys
@@ -32,13 +28,3 @@ def test_package_with_verbose(capfd):
     out, err = capfd.readouterr()
     assert "Hello world, verbose mode." in out
     assert err == ""
-{% else %}
-import {{ cookiecutter.project_slug }}
-
-
-def test_module():
-    """
-        Test the output of 2 * 2.
-    """
-    assert {{ cookiecutter.project_slug }}.two_by_two() == 4
-{% endif %}

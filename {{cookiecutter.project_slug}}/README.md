@@ -20,7 +20,6 @@ By running `detox` you will:
 $ detox
 ```
 
-{% if cookiecutter.project_type == "package" %}
 ## Running
 
 To run the application, simply execute `{{ cookiecutter.project_slug }}` under the folder with the same name:
@@ -28,4 +27,3 @@ To run the application, simply execute `{{ cookiecutter.project_slug }}` under t
 ```bash
 $ python{{ cookiecutter.python_version }} {{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}
 ```
-{% endif %}
