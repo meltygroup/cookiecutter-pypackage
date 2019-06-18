@@ -6,8 +6,8 @@ with open('README.md') as readme_file:
     long_description = readme_file.read()
 
 setup(
-    author='{{ cookiecutter.author_name }}',
-    author_email='{{ cookiecutter.author_email }}',
+    author='{{ cookiecutter.full_name }}',
+    author_email='{{ cookiecutter.email }}',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: Other/Proprietary License',
