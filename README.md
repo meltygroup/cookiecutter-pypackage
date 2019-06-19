@@ -1,24 +1,32 @@
-# cookiecutter-simple-ptoject
+# Cookiecutter PyPackage
 
-A cookiecutter template to generate Melty's Python projects.
-
-
-## Prerequisites
-
-You need `cookiecutter` to process this template:
-
-```bash
-python<version> -m pip install cookiecutter
-```
+[Cookiecutter](https://github.com/audreyr/cookiecutter) template for a
+Python application or library.
 
 
-## Running
+## Using
 
 To create a project using this template, simply run `cookiecutter`:
 
 ```bash
-cd <your_project_folder>
-cookiecutter <path_to_the_template>
+cookiecutter gh:meltygroup/cookiecutter-pypackage
 ```
 
-You'll have to fill some questions and the magic happens!
+
+## Differences between application and library
+
+This cookiecutter asks if you're building a library or an application,
+both will create a single Python package, with a module in it, so
+here's the key differences:
+
+### Application
+
+A Python application should have precise (pinned) dependencies, we're
+achieving this thrue a `requirements.txt`.
+
+
+### Library
+
+A Python library should have broad dependencies to avoid
+incompatibilities with other libraries used in a same application,
+we're achieving this thrue a `setup.py`.
