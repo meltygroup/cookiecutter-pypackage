@@ -7,4 +7,6 @@ jedi
 mypy
 pip-tools
 pylint
+pytest
+pytest-cov
 tox
