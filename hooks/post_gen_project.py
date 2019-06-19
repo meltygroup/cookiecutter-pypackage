@@ -19,7 +19,6 @@ if "{{ cookiecutter.type }}" == "application":
     run("venv/bin/pip-compile requirements.in")
     run("venv/bin/pip-compile requirements-dev.in")
     run("venv/bin/python -m pip install -r requirements-dev.txt")
-    run("venv/bin/python -m pip install -e .")
     run("git add .")
     run("git commit -m Initial")
 else:
