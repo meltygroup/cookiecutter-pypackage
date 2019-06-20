@@ -33,9 +33,4 @@ setup(
             "tox==3.7.0",
         ]
     },
-    entry_points={
-        "console_scripts": [
-            "{{ cookiecutter.project_slug }}={{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }}:main"
-        ]
-    },
 )

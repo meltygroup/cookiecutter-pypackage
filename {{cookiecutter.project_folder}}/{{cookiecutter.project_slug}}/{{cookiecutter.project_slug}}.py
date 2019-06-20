@@ -1,39 +1,47 @@
 """Entry point of the application.
 """
 
-from argparse import ArgumentParser
+import argparse
 import logging
 import sys
 
-logger = logging.getLogger(__name__)
 
-
-def main(program_args=None):
-    """Main entry point of the program
-
-    :param program_args: Arguments of the program (defaults to sys.argv)
-    :type program_args: list of str
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments.
     """
-    parser = ArgumentParser()
+
+    parser = argparse.ArgumentParser(description="Please change me.")
+    parser.add_argument(
+        "--version", action="version", version="{{ cookiecutter.project_version }}"
+    )
     parser.add_argument(
         "-v",
         "--verbose",
-        action="store_true",
-        dest="verbose",
-        default=False,
-        help="enable debug logs",
+        action="count",
+        default=0,
+        help="Increase verbosity, use -vv to see warnings, "
+        "-vvv for info and -vvvv for debug.",
     )
-
-    if program_args is None:
-        program_args = sys.argv[1:]
-
-    args = parser.parse_args(program_args)
-    level = logging.INFO
-
-    if args.verbose:
-        level = logging.DEBUG
-
-    logger.info(
-        "{{ cookiecutter.project_slug }} version {{ cookiecutter.project_version }}"
+    parser.add_argument(
+        "-q", "--quiet", action="count", default=0, help="Decrease verbosity."
     )
-    logger.debug("Hello world, verbose mode.")
+    args = parser.parse_args()
+    args.loglevel = 10 * (5 - args.verbose + args.quiet)
+    return args
+
+
+def main():
+    """Main entry point of the program.
+    """
+    args = parse_args()
+    logging.basicConfig(
+        format="%(asctime)s %(levelname)s %(name)s %(message)s",
+        stream=sys.stderr,
+        level=args.loglevel,
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    logging.debug("Hello")
+    logging.info("Hello")
+    logging.warning("Hello")
+    logging.error("Hello")
+    logging.critical("Hello")
