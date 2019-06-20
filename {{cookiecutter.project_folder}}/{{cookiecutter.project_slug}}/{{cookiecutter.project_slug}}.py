@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 import logging
 import sys
 
-import {{ cookiecutter.project_slug }}.logger as logger
+logger = logging.getLogger(__name__)
 
 
 def main(program_args=None):
@@ -37,6 +37,7 @@ def main(program_args=None):
     if args.verbose:
         level = logging.DEBUG
 
-    log = logger.get_logger("{{ cookiecutter.project_slug }}", level=level)
-    log.info("{{ cookiecutter.project_slug }} version {{ cookiecutter.project_version }}")
-    log.debug("Hello world, verbose mode.")
+    logger.info(
+        "{{ cookiecutter.project_slug }} version {{ cookiecutter.project_version }}"
+    )
+    logger.debug("Hello world, verbose mode.")
