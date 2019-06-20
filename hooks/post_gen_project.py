@@ -23,6 +23,7 @@ if "{{ cookiecutter.type }}" == "application":
 else:
     # A library uses a setup.py with requirements in it.
     os.remove("requirements.in")
+    os.remove("{{ cookiecutter.project_slug }}/__main__.py")
     run("venv/bin/pip-compile setup.py")
 
 
