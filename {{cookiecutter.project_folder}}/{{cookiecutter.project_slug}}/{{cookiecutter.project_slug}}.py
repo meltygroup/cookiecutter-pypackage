@@ -1,5 +1,4 @@
-"""
-    Entry point of the application.
+"""Entry point of the application.
 """
 
 from argparse import ArgumentParser
@@ -10,11 +9,10 @@ logger = logging.getLogger(__name__)
 
 
 def main(program_args=None):
-    """
-        Main entry point of the program
+    """Main entry point of the program
 
-        :param program_args: Arguments of the program (defaults to sys.argv)
-        :type program_args: list of str
+    :param program_args: Arguments of the program (defaults to sys.argv)
+    :type program_args: list of str
     """
     parser = ArgumentParser()
     parser.add_argument(
