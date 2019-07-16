@@ -6,7 +6,6 @@
     "project_folder": "{{ cookiecutter.project_slug.replace('_', '-') }}",
     "project_version": "0.1.0",
     "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-    "type": ["application", "library"],
     "python_version": "3.6",
     "has_docs": [
         "n",
